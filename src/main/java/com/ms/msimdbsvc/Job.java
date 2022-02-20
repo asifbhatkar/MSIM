@@ -3,9 +3,10 @@ package com.ms.msimdbsvc;
 public class Job {
 
     private int jbId;
-    private int jbHm;
-    private int jbHr;
-    private String jbDESIG;
+    private int jbHmHrId;
+    private String jbHrName;
+    private String jbHmName;
+    private String jbDesig;
     private int jbMinExp;
     private int jbMaxExp;
     private String jbTyp;
@@ -21,9 +22,10 @@ public class Job {
     public String toString() {
         return "Job{" +
                 "jbId=" + jbId +
-                ", jbHm=" + jbHm +
-                ", jbHr=" + jbHr +
-                ", jbDESIG='" + jbDESIG + '\'' +
+                ", jbHmHrId=" + jbHmHrId +
+                ", jbHrName='" + jbHrName + '\'' +
+                ", jbHmName='" + jbHmName + '\'' +
+                ", jbDesig='" + jbDesig + '\'' +
                 ", jbMinExp=" + jbMinExp +
                 ", jbMaxExp=" + jbMaxExp +
                 ", jbTyp='" + jbTyp + '\'' +
@@ -45,28 +47,36 @@ public class Job {
         this.jbId = jbId;
     }
 
-    public int getJbHm() {
-        return jbHm;
+    public int getJbHmHrId() {
+        return jbHmHrId;
     }
 
-    public void setJbHm(int jbHm) {
-        this.jbHm = jbHm;
+    public void setJbHmHrId(int jbHmHrId) {
+        this.jbHmHrId = jbHmHrId;
     }
 
-    public int getJbHr() {
-        return jbHr;
+    public String getJbHrName() {
+        return jbHrName;
     }
 
-    public void setJbHr(int jbHr) {
-        this.jbHr = jbHr;
+    public void setJbHrName(String jbHrName) {
+        this.jbHrName = jbHrName;
     }
 
-    public String getJbDESIG() {
-        return jbDESIG;
+    public String getJbHmName() {
+        return jbHmName;
     }
 
-    public void setJbDESIG(String jbDESIG) {
-        this.jbDESIG = jbDESIG;
+    public void setJbHmName(String jbHmName) {
+        this.jbHmName = jbHmName;
+    }
+
+    public String getJbDesig() {
+        return jbDesig;
+    }
+
+    public void setJbDesig(String jbDesig) {
+        this.jbDesig = jbDesig;
     }
 
     public int getJbMinExp() {

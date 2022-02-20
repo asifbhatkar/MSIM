@@ -7,7 +7,7 @@ public class JobCanPnl {
     private int jbMaxExp;
     private String jbPostDate;
     private String jbStatus;
-    private String Name;
+    private String canName;
     private String canStatus;
     private String pnlName;
     private String pnlTimeSlot;
@@ -21,7 +21,7 @@ public class JobCanPnl {
                 ", jbMaxExp=" + jbMaxExp +
                 ", jbPostDate='" + jbPostDate + '\'' +
                 ", jbStatus='" + jbStatus + '\'' +
-                ", Name='" + Name + '\'' +
+                ", canName='" + canName + '\'' +
                 ", canStatus='" + canStatus + '\'' +
                 ", pnlName='" + pnlName + '\'' +
                 ", pnlTimeSlot='" + pnlTimeSlot + '\'' +
@@ -76,12 +76,12 @@ public class JobCanPnl {
         this.jbStatus = jbStatus;
     }
 
-    public String getName() {
-        return Name;
+    public String  getCanName() {
+        return canName;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public void  setCanName(String canName) {
+        canName = canName;
     }
 
     public String getCanStatus() {

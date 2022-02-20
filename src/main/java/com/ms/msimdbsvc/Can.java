@@ -3,7 +3,7 @@ package com.ms.msimdbsvc;
 public class Can {
     private int canId;
     private int canJbId;
-    private String Name;
+    private String canName;
     private String canPriSkill;
     private String canSecSkill;
     private String canQual;
@@ -14,7 +14,7 @@ public class Can {
         return "Can{" +
                 "canId=" + canId +
                 ", canJbId=" + canJbId +
-                ", Name='" + Name + '\'' +
+                ", canName='" + canName + '\'' +
                 ", canPriSkill='" + canPriSkill + '\'' +
                 ", canSecSkill='" + canSecSkill + '\'' +
                 ", canQual='" + canQual + '\'' +
@@ -38,12 +38,12 @@ public class Can {
         this.canJbId = canJbId;
     }
 
-    public String getName() {
-        return Name;
+    public String  getCanName() {
+        return canName;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public void  setCanName(String canName) {
+        canName = canName;
     }
 
     public String getCanPriSkill() {

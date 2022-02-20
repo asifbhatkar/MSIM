@@ -25,7 +25,7 @@ public class AppController {
     private GetJobCan getjobcan;
 
     @GetMapping("/getjob")
-    public List<Job> getjob(@RequestParam(value = "hmhrid", defaultValue = "1" ) int hmhrid) throws SQLException {
+    public List<JobDet> getjob(@RequestParam(value = "hmhrId", defaultValue = "1" ) int hmhrid) throws SQLException {
         return getjobcan.getJob(hmhrid);
     }
 

@@ -16,20 +16,21 @@ public class JobExtractor implements ResultSetExtractor<List<Job>> {
 
         while(rs.next()){
             Job job = new Job();
-            rs.getInt("IM_JB_ID");
-            rs.getInt("IM_JB_HM");
-            rs.getInt("IM_JB_HR");
-            rs.getString("IM_JB_DESIG");
-            rs.getInt("IM_JB_MIN_EXP");
-            rs.getInt("IM_JB_MAX_EXP");
-            rs.getString("IM_JB_TYP");
-            rs.getString("IM_JB_DEPT");
-            rs.getString("IM_JB_SUB_DEPT");
-            rs.getString("IM_JB_PRI_SKILL");
-            rs.getString("IM_JB_SEC_SKILL");
-            rs.getString("IM_JB_QUALIFICATION");
-            rs.getString("IM_JB_POSTING_DATE");
-            rs.getString("IM_JB_STATUS");
+            job.setJbId(rs.getInt("IM_JB_ID"));
+            job.setJbHmHrId(rs.getInt("IM_JB_HMHR_ID"));
+            job.setJbHrName(rs.getString("IM_JB_HR_NAME"));
+            job.setJbHmName(rs.getString("IM_JB_HM_NAME"));
+            job.setJbDesig(rs.getString("IM_JB_DESIG"));
+            job.setJbMinExp(rs.getInt("IM_JB_MIN_EXP"));
+            job.setJbMaxExp(rs.getInt("IM_JB_MAX_EXP"));
+            job.setJbTyp(rs.getString("IM_JB_TYPE"));
+            job.setJbDept(rs.getString("IM_JB_DEPT"));
+            job.setJbSubDept(rs.getString("IM_JB_SUB_DEPT"));
+            job.setJbPriSkill(rs.getString("IM_JB_PRI_SKILL"));
+            job.setJbSecSkill(rs.getString("IM_JB_SEC_SKILL"));
+            job.setJbQual(rs.getString("IM_JB_QUALIFICATION"));
+            job.setJbPostDate(rs.getString("IM_JB_POSTING_DATE"));
+            job.setJbStatus(rs.getString("IM_JB_STATUS"));
 
             jobList.add(job);
         }

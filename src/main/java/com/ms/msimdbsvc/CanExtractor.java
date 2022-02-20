@@ -16,13 +16,13 @@ public class CanExtractor implements ResultSetExtractor<List<Can>> {
 
         while(rs.next()){
             Can can = new Can();
-            rs.getInt("IM_CAN_ID");
-            rs.getInt("IM_CAN_JB_ID");
-            rs.getString("IM_CAN_NAME");
-            rs.getString("IM_CAN_PRI_SKILL");
-            rs.getString("IM_CAN_SEC_SKILL");
-            rs.getString("IM_CAN_QUALIFICATION");
-            rs.getString("IM_CAN_STATUS");
+            can.setCanId(rs.getInt("IM_CAN_ID"));
+            can.setCanJbId(rs.getInt("IM_CAN_JB_ID"));
+            can.setCanName(rs.getString("IM_CAN_NAME"));
+            can.setCanPriSkill(rs.getString("IM_CAN_PRI_SKILL"));
+            can.setCanSecSkill(rs.getString("IM_CAN_SEC_SKILL"));
+            can.setCanQual(rs.getString("IM_CAN_QUALIFICATION"));
+            can.setCanStatus(rs.getString("IM_CAN_STATUS"));
 
             canList.add(can);
         }

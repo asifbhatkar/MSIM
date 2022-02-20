@@ -5,7 +5,7 @@ package com.ms.msimdbsvc;
 public class CanPnl {
     //    private int canId;
     private int canJbId;
-    private String Name;
+    private String canName;
     //    private String canPriSkill;
 //    private String canSecSkill;
 //    private String canQual;
@@ -24,7 +24,7 @@ public class CanPnl {
     public String toString() {
         return "CanPnl{" +
                 "canJbId=" + canJbId +
-                ", Name='" + Name + '\'' +
+                ", canName='" + canName + '\'' +
                 ", canStatus='" + canStatus + '\'' +
                 ", pnlName='" + pnlName + '\'' +
                 ", pnlTimeSlot='" + pnlTimeSlot + '\'' +
@@ -39,12 +39,12 @@ public class CanPnl {
         this.canJbId = canJbId;
     }
 
-    public String getName() {
-        return Name;
+    public String  getCanName() {
+        return canName;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public void  setCanName(String canName) {
+        canName = canName;
     }
 
     public String getCanStatus() {

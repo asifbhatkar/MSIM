@@ -22,7 +22,7 @@ public class JobCanPnlExtractor implements ResultSetExtractor<List<JobCanPnl>> {
             jobcanpnl.setJbMaxExp(rs.getInt("IM_JB_MAX_EXP"));
             jobcanpnl.setJbPostDate(rs.getString("IM_JB_POSTING_DATE"));
             jobcanpnl.setJbStatus(rs.getString("IM_JB_STATUS"));
-            jobcanpnl.setName(rs.getString("IM_CAN_NAME"));
+            jobcanpnl. setCanName(rs.getString("IM_CAN_NAME"));
             jobcanpnl.setCanStatus(rs.getString("IM_CAN_STATUS"));
             jobcanpnl.setPnlName(rs.getString("IM_PNL_NAME"));
             jobcanpnl.setPnlTimeSlot(rs.getString("IM_PNL_TIMESLOT"));

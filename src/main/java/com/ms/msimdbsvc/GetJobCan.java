@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface GetJobCan {
 
-    public List<Job> getJob(int hmhrId) throws SQLException;
+    public List<JobDet> getJob(int hmhrId) throws SQLException;
 
     public List<Can> getCan(int jobId) throws SQLException;
 

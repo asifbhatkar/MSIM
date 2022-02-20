@@ -15,18 +15,18 @@ public class PnlExtractor implements ResultSetExtractor<List<Pnl>> {
         List<Pnl> pnlList = new ArrayList<Pnl>();
 
         while(rs.next()){
-            Pnl Pnl = new Pnl();
-            rs.getInt("IM_PNL_ID");
-            rs.getString("IM_PNL_NAME");
-            rs.getString("IM_PNL_DEPT");
-            rs.getString("IM_PNL_Desig");
-            rs.getInt("IM_PNL_EXP");
-            rs.getString("IM_PNL_SKILL");
-            rs.getInt("IM_PNL_SKILL_EXP");
-            rs.getString("IM_PNL_AVAIL");
-            rs.getString("IM_PNL_TIMESLOT");
+            Pnl pnl = new Pnl();
+            pnl.setPnlId(rs.getInt("IM_PNL_ID"));
+            pnl.setPnlName(rs.getString("IM_PNL_NAME"));
+            pnl.setPnlDept(rs.getString("IM_PNL_DEPT"));
+            pnl.setPnlDESIG(rs.getString("IM_PNL_Desig"));
+            pnl.setPnlExp(rs.getInt("IM_PNL_EXP"));
+            pnl.setPnlSkill(rs.getString("IM_PNL_SKILL"));
+            pnl.setPnlSkillExp(rs.getInt("IM_PNL_SKILL_EXP"));
+            pnl.setPnlAvail(rs.getString("IM_PNL_AVAIL"));
+            pnl.setPnlTimeSlot(rs.getString("IM_PNL_TIMESLOT"));
 
-            pnlList.add(Pnl);
+            pnlList.add(pnl);
         }
 
         return pnlList;
