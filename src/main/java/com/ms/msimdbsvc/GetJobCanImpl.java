@@ -1,8 +1,12 @@
 package com.ms.msimdbsvc;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
@@ -27,39 +31,51 @@ public class GetJobCanImpl implements GetJobCan {
     @Override
     public List<JobDet> getJob(int hmhrID) throws SQLException {
 
-        List<JobDet> jbDetList = new ArrayList<JobDet>();
+      if (hmhrID > 0) {
+          List<JobDet> jbDetList = new ArrayList<JobDet>();
 
-        String sql1 = "SELECT * FROM " + dboSchema + "." + tblIMJB +
-                " WHERE IM_JB_HMHR_ID = " + hmhrID +
-                ";";
+          String sql1 = "SELECT * FROM " + dboSchema + "." + tblIMJB +
+                  " WHERE IM_JB_HMHR_ID = " + hmhrID +
+                  ";";
 
-        List<Job> jbList = jdbcTemplate.query(sql1, new JobExtractor());
+          List<Job> jbList = jdbcTemplate.query(sql1, new JobExtractor());
 
-        for (Job job : jbList)
-        {
-            List<CanDet> canDetList = new ArrayList<CanDet>();
+          for (Job job : jbList) {
+              List<CanDet> canDetList = new ArrayList<CanDet>();
 
-            List<Can> cnList = getCan(job.getJbId());
+              List<Can> cnList = getCan(job.getJbId());
 
-            for (Can can : cnList)
-            {
-                List<Pnl> pnList = getPnl(can.getCanPriSkill());
-                CanDet canDet = new CanDet();
-                canDet.setCan(can);
-                canDet.setPnlList(pnList);
-                canDetList.add(canDet);
+              for (Can can : cnList) {
+                  List<Pnl> pnList = getPnl(can.getCanPriSkill());
+                  CanDet canDet = new CanDet();
+                  canDet.setCan(can);
+                  canDet.setPnlList(pnList);
+                  canDetList.add(canDet);
 
-            }
+              }
 
-            JobDet jbDet = new JobDet();
-            jbDet.setJob(job);
-            jbDet.setCanDetList(canDetList);
-            jbDetList.add(jbDet);
+              JobDet jbDet = new JobDet();
+              jbDet.setJob(job);
+              jbDet.setCanDetList(canDetList);
+              jbDetList.add(jbDet);
 
-        }
+          }
 
-        return jbDetList;
-
+          boolean checkRes = jbDetList.isEmpty();
+          if (checkRes == true)
+          {
+              System.out.println("No job found for HR/HM ID : " + hmhrID);
+              throw new NojobfoundException("No job found for HR/HM ID : " + hmhrID);
+          }
+          else
+          {
+              return jbDetList;
+          }
+      }
+      else
+      {
+          throw new NoSuchElementFoundException("Enter valid HR / HM ID");
+      }
     }
 
 //    @Override
@@ -123,7 +139,6 @@ public class GetJobCanImpl implements GetJobCan {
         return jdbcTemplate.query(sql1, new JobCanPnlExtractor());
 
     }
-
 //    @Override
 //    public List<Can> getCan(int canId) throws SQLException {
 //        return null;
