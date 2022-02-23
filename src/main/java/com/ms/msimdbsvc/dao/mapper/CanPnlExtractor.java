@@ -1,5 +1,6 @@
-package com.ms.msimdbsvc;
+package com.ms.msimdbsvc.dao.mapper;
 
+import com.ms.msimdbsvc.models.CanPnl;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
 

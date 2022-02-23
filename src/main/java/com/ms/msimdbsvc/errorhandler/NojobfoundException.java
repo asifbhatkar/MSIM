@@ -1,4 +1,4 @@
-package com.ms.msimdbsvc;
+package com.ms.msimdbsvc.errorhandler;
 
 public class NojobfoundException extends RuntimeException {
 

@@ -1,5 +1,6 @@
-package com.ms.msimdbsvc;
+package com.ms.msimdbsvc.dao.mapper;
 
+import com.ms.msimdbsvc.models.Can;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
 
@@ -19,8 +20,8 @@ public class CanExtractor implements ResultSetExtractor<List<Can>> {
             can.setCanId(rs.getInt("IM_CAN_ID"));
             can.setCanJbId(rs.getInt("IM_CAN_JB_ID"));
             can.setCanName(rs.getString("IM_CAN_NAME"));
-            can.setCanPriSkill(rs.getString("IM_CAN_PRI_SKILL"));
-            can.setCanSecSkill(rs.getString("IM_CAN_SEC_SKILL"));
+            can.setCanResumeDir(rs.getString("IM_CAN_RESUME_DIR"));
+            can.setCanResumeDir(rs.getString("IM_CAN_SKILL"));
             can.setCanQual(rs.getString("IM_CAN_QUALIFICATION"));
             can.setCanStatus(rs.getString("IM_CAN_STATUS"));
 

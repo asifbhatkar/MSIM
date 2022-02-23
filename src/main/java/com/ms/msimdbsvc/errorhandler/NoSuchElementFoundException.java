@@ -1,8 +1,8 @@
-package com.ms.msimdbsvc;
+package com.ms.msimdbsvc.errorhandler;
 
 public class NoSuchElementFoundException extends RuntimeException{
 
-    NoSuchElementFoundException(String message)
+    public NoSuchElementFoundException(String message)
     {
         super(message);
     }

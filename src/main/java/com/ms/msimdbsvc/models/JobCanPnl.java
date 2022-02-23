@@ -1,4 +1,4 @@
-package com.ms.msimdbsvc;
+package com.ms.msimdbsvc.models;
 
 public class JobCanPnl {
     private int jbId;
@@ -81,7 +81,7 @@ public class JobCanPnl {
     }
 
     public void  setCanName(String canName) {
-        canName = canName;
+        this.canName = canName;
     }
 
     public String getCanStatus() {

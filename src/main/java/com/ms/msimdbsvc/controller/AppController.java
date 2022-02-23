@@ -1,5 +1,9 @@
-package com.ms.msimdbsvc;
+package com.ms.msimdbsvc.controller;
 
+import com.ms.msimdbsvc.dao.GetJobCan;
+import com.ms.msimdbsvc.errorhandler.NoSuchElementFoundException;
+import com.ms.msimdbsvc.errorhandler.NojobfoundException;
+import com.ms.msimdbsvc.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,23 +16,25 @@ import java.sql.SQLException;
 import java.util.List;
 
 
-@SpringBootApplication
 @RestController
-@ComponentScan({"com.ms.msimdbsvc"})
+//@ComponentScan({"com.ms.msimdbsvc"})
 public class AppController {
-
-    public static void main(String[] args) {
-        SpringApplication.run(AppController.class, args);
-    }
 
     @Autowired
     private GetJobCan getjobcan;
 
     @GetMapping("/getjob")
-    public List<JobDet> getjob(@RequestParam(value = "hmhrId", defaultValue = "0" ) int hmhrid) throws SQLException {
+    public List<JobDet> getjob(@RequestParam(value = "hmhrId", defaultValue = " " ) String hmhrid) throws SQLException {
 //    public List<JobDet> getjob(@RequestParam(value = "hmhrId") int hmhrid) throws SQLException {
         return getjobcan.getJob(hmhrid);
     }
+
+    @GetMapping("/getint")
+    public List<IntDet> getint(@RequestParam(value = "pnlId", defaultValue = " " ) String pnlid) throws SQLException {
+//    public List<JobDet> getjob(@RequestParam(value = "hmhrId") int hmhrid) throws SQLException {
+        return getjobcan.getInt(pnlid);
+    }
+
 
     @GetMapping("/getcan")
     public List<Can> getcan(@RequestParam(value = "jobId", defaultValue = "1" ) int jobId) throws SQLException {
@@ -37,7 +43,7 @@ public class AppController {
     }
 
     @GetMapping("/getpnl")
-    public List<Pnl> getpnl(@RequestParam(value = "skill", defaultValue = "java" ) String skill) throws SQLException {
+    public List<Pnl> getpnl(@RequestParam(value = "skill", defaultValue = " " ) String skill) throws SQLException {
         return getjobcan.getPnl(skill);
     }
 
@@ -48,7 +54,7 @@ public class AppController {
     }
 
     @GetMapping("/getjobcanpnl")
-    public List<JobCanPnl> getjobcanpnl(@RequestParam(value = "hmhrId", defaultValue = "100" ) int hmhrId) throws SQLException {
+    public List<JobCanPnl> getjobcanpnl(@RequestParam(value = "hmhrId", defaultValue = " " ) String hmhrId) throws SQLException {
         return getjobcan.getJobCanPnl(hmhrId);
     }
 

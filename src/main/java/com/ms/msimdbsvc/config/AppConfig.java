@@ -1,11 +1,6 @@
-package com.ms.msimdbsvc;
+package com.ms.msimdbsvc.config;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.core.JdbcTemplate;
-
-import javax.sql.DataSource;
-import java.util.logging.Logger;
 
 @Configuration
 public class AppConfig {

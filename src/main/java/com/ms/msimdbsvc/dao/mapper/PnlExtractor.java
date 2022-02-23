@@ -1,5 +1,6 @@
-package com.ms.msimdbsvc;
+package com.ms.msimdbsvc.dao.mapper;
 
+import com.ms.msimdbsvc.models.Pnl;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
 
@@ -16,13 +17,11 @@ public class PnlExtractor implements ResultSetExtractor<List<Pnl>> {
 
         while(rs.next()){
             Pnl pnl = new Pnl();
-            pnl.setPnlId(rs.getInt("IM_PNL_ID"));
+            pnl.setPnlId(rs.getString("IM_PNL_ID"));
             pnl.setPnlName(rs.getString("IM_PNL_NAME"));
+            pnl.setPnlExp(rs.getBigDecimal("IM_PNL_EXP"));
             pnl.setPnlDept(rs.getString("IM_PNL_DEPT"));
             pnl.setPnlDESIG(rs.getString("IM_PNL_Desig"));
-            pnl.setPnlExp(rs.getInt("IM_PNL_EXP"));
-            pnl.setPnlSkill(rs.getString("IM_PNL_SKILL"));
-            pnl.setPnlSkillExp(rs.getInt("IM_PNL_SKILL_EXP"));
             pnl.setPnlAvail(rs.getString("IM_PNL_AVAIL"));
             pnl.setPnlTimeSlot(rs.getString("IM_PNL_TIMESLOT"));
 

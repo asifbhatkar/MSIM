@@ -1,11 +1,11 @@
-package com.ms.msimdbsvc;
+package com.ms.msimdbsvc.models;
 
 public class Can {
     private int canId;
     private int canJbId;
     private String canName;
-    private String canPriSkill;
-    private String canSecSkill;
+    private String canResumeDir;
+    private String canSkill;
     private String canQual;
     private String canStatus;
 
@@ -15,8 +15,8 @@ public class Can {
                 "canId=" + canId +
                 ", canJbId=" + canJbId +
                 ", canName='" + canName + '\'' +
-                ", canPriSkill='" + canPriSkill + '\'' +
-                ", canSecSkill='" + canSecSkill + '\'' +
+                ", canResumeDir='" + canResumeDir + '\'' +
+                ", canSkill='" + canSkill + '\'' +
                 ", canQual='" + canQual + '\'' +
                 ", canStatus='" + canStatus + '\'' +
                 '}';
@@ -38,28 +38,28 @@ public class Can {
         this.canJbId = canJbId;
     }
 
-    public String  getCanName() {
+    public String getCanName() {
         return canName;
     }
 
-    public void  setCanName(String canName) {
-        canName = canName;
+    public void setCanName(String canName) {
+        this.canName = canName;
     }
 
-    public String getCanPriSkill() {
-        return canPriSkill;
+    public String getCanResumeDir() {
+        return canResumeDir;
     }
 
-    public void setCanPriSkill(String canPriSkill) {
-        this.canPriSkill = canPriSkill;
+    public void setCanResumeDir(String canResumeDir) {
+        this.canResumeDir = canResumeDir;
     }
 
-    public String getCanSecSkill() {
-        return canSecSkill;
+    public String getCanSkill() {
+        return canSkill;
     }
 
-    public void setCanSecSkill(String canSecSkill) {
-        this.canSecSkill = canSecSkill;
+    public void setCanSkill(String canSkill) {
+        this.canSkill = canSkill;
     }
 
     public String getCanQual() {

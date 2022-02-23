@@ -1,4 +1,4 @@
-package com.ms.msimdbsvc;
+package com.ms.msimdbsvc.models;
 
 
 
@@ -6,8 +6,8 @@ public class CanPnl {
     //    private int canId;
     private int canJbId;
     private String canName;
-    //    private String canPriSkill;
-//    private String canSecSkill;
+    //    private String canResumeDir;
+//    private String canSkill;
 //    private String canQual;
     private String canStatus;
     //    private int pnlId;

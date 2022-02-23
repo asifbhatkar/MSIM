@@ -1,4 +1,4 @@
-package com.ms.msimdbsvc;
+package com.ms.msimdbsvc.models;
 
 public class ErrorObj {
 
